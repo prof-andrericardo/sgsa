@@ -1,0 +1,42 @@
+Recomenações IAra SGA   - CHAT 1
+
+Atualizar o documento regras-de-negocio_v5.md para incluir RN39 a RN42. OK
+
+Atualizar o manual visual por perfil com uma nova seção para o Administrador.   OK
+
+    Criar um manual visual por perfil (professor, coordenação, secretaria). OK
+
+Gerar documentação de requisitos (SRS) com base nas regras. OK
+
+Atualizar o diagrama Mermaid com entidades e atributos relacionados;    OK
+
+Esboçar os diagramas de caso de uso ou fluxo de dados dos casos de uso por perfil.  OK
+
+Gerar fluxos de dados (DFD – Diagrama de Fluxo de Dados) entre os módulos.  OK
+
+Criar um DFD de Nível 2 detalhado para cada módulo  OK
+
+Criar o modelo de casos de uso para impressão em documentação técnica.  OK
+
+
+Recomenações IAra SGA   - CHAT 2
+
+Priorizar funcionalidades para o MVP E Criar um roteiro de funcionalidades do MVP baseado nas regras atuais;
+
+Definir os módulos do backend e frontend com base nessas regras.
+
+Relacionar os módulos com os endpoints REST da API. / Mapear os endpoints REST que atendem cada fluxo.
+
+
+
+
+Avançar para scripts SQL ou protótipos de telas.
+
+Implementar painéis personalizados com KPIs e notificações por função.
+
+Garantir que o sistema tenha respostas rápidas, principalmente na chamada e no registro de aula.
+
+Adicionar um mecanismo de ajuda contextual, explicando o uso de cada funcionalidade.
+
+
+
