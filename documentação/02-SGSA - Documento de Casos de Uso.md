@@ -1,22 +1,47 @@
-# 📘 SGSA – Casos de Uso Corrigidos e Unificados
+# 📘 SGSA – Documento Unificado de Casos de Uso e Regras de Negócio  
+**Versão:** 6.1 | **Atualizado em:** 21/05/2025  
 
-*Versão Consolidada | Baseada nas RNs v5.0+ e Casos v5.2 | Atualizado em: 21/05/2025*
-
-------
+---
 
 ## 🔍 Sumário
 
-1. [Registrar Aula](#1-registrar-aula)
-2. [Realizar Chamada](#2-realizar-chamada)
-3. [Atribuir e Avaliar Tarefa](#3-atribuir-e-avaliar-tarefa)
-4. [Registrar Ocorrência](#4-registrar-ocorrência)
-5. [Gerenciar Usuários e Perfis](#5-gerenciar-usuários-e-perfis)
-6. [Gerenciar Grade Horária](#6-gerenciar-grade-horária)
-7. [Consultar Agenda](#7-consultar-agenda)
-8. [Auditoria de Alterações](#8-auditoria-de-alterações)
-9. [Matriz de Rastreabilidade](#9-matriz-de-rastreabilidade)
+1. [Visão Geral](#visão-geral)  
+2. [Casos de Uso](#casos-de-uso)  
+3. [Anexos](#anexos)  
+4. [Checklist Final](#checklist-final)
 
-------
+---
+
+## 🌐 Visão Geral
+
+Este documento unifica as versões `chat_v5.3` (pragmática e funcional) e `deep_v6.0` (analítica e ampliada), consolidando:
+
+- **Casos de uso validados com base nas RNs v6.0**
+- **Diagramas de fluxo, ciclo de vida e templates padronizados**
+- **Campos obrigatórios e validações técnicas e pedagógicas**
+- **Rastreabilidade e padronização por perfis de usuário**
+
+---
+
+## 📂 Casos de Uso
+---
+
+## 10. Gerenciar Estrutura Institucional
+
+**🎯 Ator Principal:** Administrador  
+**📝 Descrição:** Permite criar e editar ciclos, séries e turmas vinculadas ao ano letivo, e definir a estrutura básica da instituição.
+
+**✅ Pré-condições:** Acesso com permissão de administrador.  
+**🔁 Fluxo Principal:**
+1. Cria ou edita ciclos (ex: Fundamental I, Médio).
+2. Define séries associadas aos ciclos.
+3. Cria turmas vinculadas ao ano letivo e série.
+4. Define turno da turma (matutino, vespertino, noturno).
+
+**📦 Pós-condições:** Estrutura institucional refletida no sistema para uso por todos os perfis.
+
+**🔗 Regras Relacionadas:** RN04, RN05, RN28, RN40
+
 
 ## 1. Registrar Aula
 
@@ -55,6 +80,8 @@ flowchart TB
 - Todas as alterações são auditadas (RN32)
 
 ------
+
+---
 
 ## 2. Realizar Chamada
 
@@ -96,6 +123,8 @@ flowchart LR
 
 ------
 
+---
+
 ## 3. Atribuir e Avaliar Tarefa
 
 **Ator:** Professor
@@ -107,7 +136,7 @@ flowchart LR
 flowchart TD
     A[Definir título e descrição] --> B[Selecionar turma ou alunos]
     B --> C[Indicar capítulo, páginas e tipo de tarefa]
-    C --> D[Marcar "Vinculada à aula" ou não]
+    C --> D[Marcar se vinculada à aula ou não]
     D --> E[Definir prazo de entrega]
     E --> F[Salvar Tarefa]
 ```
@@ -144,6 +173,8 @@ journey
 
 ------
 
+---
+
 ## 4. Registrar Ocorrência
 
 **Ator:** Professor, Coordenação, Secretaria
@@ -178,6 +209,8 @@ journey
 
 ------
 
+---
+
 ## 5. Gerenciar Usuários e Perfis
 
 **Ator:** Administrador, Coordenação
@@ -208,6 +241,8 @@ flowchart TD
 
 ------
 
+---
+
 ## 6. Gerenciar Grade Horária
 
 **Ator:** Coordenação, Administrador
@@ -235,6 +270,8 @@ flowchart TD
 
 ------
 
+---
+
 ## 7. Consultar Agenda
 
 **Ator:** Todos os Perfis
@@ -251,6 +288,8 @@ flowchart TD
 - Em caso de múltiplos perfis, sistema consolida agendas priorizando o mais alto na hierarquia (Admin > Coordenação > Professor > Aluno)
 
 ------
+
+---
 
 ## 8. Auditoria de Alterações
 
@@ -275,28 +314,25 @@ flowchart LR
 
 ------
 
-## 9. Matriz de Rastreabilidade
+## 📎 Anexos  
 
-| Regra | Caso de Uso             | Status | Observação                  |
-| ----- | ----------------------- | ------ | --------------------------- |
-| RN01  | Gerenciar Usuários      | ✔️      | Controle hierárquico        |
-| RN02  | Gerenciar Usuários      | ✔️      | Cadastro unificado          |
-| RN03  | Todos                   | ✔️      | Login com validação         |
-| RN06  | Registrar Aula          | ✔️      | Estrutura da aula           |
-| RN08  | Registrar Aula, Chamada | ✔️      | Edição até 72h              |
-| RN21  | Gerenciar Usuários      | ✔️      | Multipapel                  |
-| RN23  | Registrar Aula          | ✔️      | Aula não ministrada         |
-| RN24  | Realizar Chamada        | ✔️      | Marcação ampliada           |
-| RN25  | Atribuir Tarefa         | ✔️      | Tarefa fora de aula         |
-| RN32  | Todos                   | ✔️      | Auditoria ampla             |
-| RN35  | Atribuir Tarefa         | ✔️      | Status completos            |
-| RN37  | Registrar Ocorrência    | ✔️      | Vínculo com disciplina      |
-| RN38  | Consultar Agenda        | ✔️      | Agenda integrada por perfil |
+### Matriz de Rastreabilidade Completa  
+[Link para planilha](#)  
 
-------
+### Códigos de Erro  
+| Código | Descrição                |
+| ------ | ------------------------ |
+| 460    | Conflito de perfis       |
+| 461    | Disciplina não informada |
 
-**Conclusão:**
+### Versões para Exportação  
+```mermaid  
+pie  
+    title Formatos  
+    "PDF": 45  
+    "HTML": 35  
+    "Markdown": 20  
+```
 
-> Todos os casos de uso foram atualizados para refletir fielmente as Regras de Negócio estabelecidas. Com esta versão consolidada, o sistema SGSA está pronto para guiar a fase de desenvolvimento, garantindo rastreabilidade, segurança e aderência pedagógica.
+---
 
-------

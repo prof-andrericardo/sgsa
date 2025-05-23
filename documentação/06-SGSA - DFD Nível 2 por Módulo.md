@@ -35,6 +35,8 @@ Coordenador --> C3
 flowchart TD
 Professor --> T1["Criar Nova Tarefa"]
 Professor --> T2["Atribuir a Aluno/Turma"]
+T2 --> T2a[Marcar se vinculada]
+T2a --> BD
 Aluno --> T3["Enviar Resposta"]
 Professor --> T4["Avaliar e Atribuir Status"]
 T1 --> BD[(TAREFA)]
@@ -63,6 +65,16 @@ O4 --> BD
 
 ```mermaid
 flowchart TD
+Administrador --> G1["Cadastrar Ciclo"]
+G1 --> G2["Definir Série por Ciclo"]
+G2 --> G3["Criar Turmas por Ano Letivo"]
+G3 --> G4["Definir Turno por Turma"]
+G4 --> BD[(TURMA, CICLO, SERIE)]
+```
+
+
+```mermaid
+flowchart TD
 Administrador --> G1["Cadastrar Ciclo/Série"]
 Administrador --> G2["Criar Turmas"]
 Administrador --> G3["Atribuir Turno"]
@@ -85,6 +97,8 @@ Administrador --> A1["Criar Usuário"]
 Administrador --> A2["Atribuir Perfil (Professor, Coordenação, etc.)"]
 Administrador --> A3["Editar Permissões"]
 Secretaria --> A4["Consultar Usuários"]
+Usuario --> A5["Alternar Perfil em Tempo Real"]
+A5 --> Sistema
 A1 --> BD[(USUARIO)]
 A2 --> BD[(USUARIO_PAPEL)]
 A3 --> BD
@@ -94,6 +108,17 @@ A4 --> BD
 ------
 
 ## 📘 Módulo A7 – Agenda e Grade Horária
+
+```mermaid
+flowchart TD
+Usuario["Com múltiplos perfis"] --> C1["Solicita agenda integrada"]
+C1 --> C2{"Conflito de horário?"}
+C2 -->|Sim| C3["Solicita resolução de prioridade"]
+C3 --> BD
+C2 -->|Não| C4["Exibe agenda consolidada"]
+C4 --> BD
+```
+
 
 ```mermaid
 flowchart TD

@@ -31,6 +31,7 @@ Este manual apresenta de forma clara e objetiva as funcionalidades e regras de n
 - **RN34**: Planejamento de aulas futuras
 - **RN35**: Status das tarefas
 - **RN36**: Avaliação digital
+- **RN45**: Troca de perfil em tempo real
 - **RN37**: Ocorrência por disciplina
 - **RN38**: Visualização integrada da agenda
 
@@ -69,9 +70,11 @@ Este manual apresenta de forma clara e objetiva as funcionalidades e regras de n
 - **RN32**: Auditoria de alterações
 - **RN33**: Histórico de turmas
 - **RN34**: Planejamento de aulas futuras
-- **RN36**: Avaliação digital supervisionada
+- **RN36**: Avaliação digital
+- **RN45**: Troca de perfil em tempo real supervisionada
 - **RN37**: Ocorrência por disciplina
 - **RN38**: Agenda geral consolidada
+- **RN46**: Conflito de agendas por múltiplos perfis
 
 ### 🧭 Funcionalidades Visuais
 
@@ -80,6 +83,7 @@ Este manual apresenta de forma clara e objetiva as funcionalidades e regras de n
 - Tela de Logs e Auditoria
 - Painel de Acompanhamento de Professores
 - Agenda e Mapa de Horários por Turno
+- Visualizar e Resolver Conflitos de Agenda
 
 ------
 
@@ -140,6 +144,9 @@ Este manual apresenta de forma clara e objetiva as funcionalidades e regras de n
 - **RN40**: Manutenção da estrutura institucional
 - **RN41**: Acesso administrativo completo
 - **RN42**: Configurações globais do sistema
+- **RN44**: Auditoria de alterações
+- **RN45**: Troca de perfil em tempo real
+- **RN46**: Conflito de agendas por múltiplos perfis
 
 ### 🧭 Funcionalidades Visuais
 

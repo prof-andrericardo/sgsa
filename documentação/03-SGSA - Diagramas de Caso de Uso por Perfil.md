@@ -16,7 +16,7 @@ flowchart TB
         A3["Planejar Aula Futura"]
         A4["Realizar Chamada"]
         A5["Justificar Ausência de Aluno"]
-        A6["Atribuir Tarefa"]
+        A6["Gerenciar Tarefas e Avaliações"]
         A7["Avaliar Tarefa"]
         A8["Registrar Ocorrência"]
         A9["Visualizar Agenda"]
@@ -28,9 +28,12 @@ flowchart TB
     Professor --> A4
     Professor --> A5
     Professor --> A6
+    Professor --> A10["Alternar Perfis de Acesso (RN45)"]
+    Professor --> A10["Alternar Perfis (RN45)"]
     Professor --> A7
     Professor --> A8
     Professor --> A9
+    Professor --> A10["Alternar Perfis de Acesso (RN45)"]
 ```
 
 ------
