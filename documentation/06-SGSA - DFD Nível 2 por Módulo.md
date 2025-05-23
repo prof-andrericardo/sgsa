@@ -146,3 +146,26 @@ L2 --> BD
 L3 --> BD
 ```
 
+
+---
+
+## 📘 Módulo A9 – Gerenciamento de Perfil e Conflitos de Agenda
+
+Este módulo representa as ações descritas nas **RN45** (Troca de Perfis em Tempo Real) e **RN46** (Conflitos de Agenda entre Múltiplos Perfis). Ele centraliza as decisões que antes estavam fragmentadas entre os módulos A6 e A7.
+
+### 🔄 Fluxo – Troca de Perfil e Resolução de Conflitos
+
+```mermaid
+flowchart TD
+Usuario --> P1["Selecionar Perfil Ativo (RN45)"]
+Sistema --> P2["Detectar Conflito de Agenda (RN46)"]
+P2 --> P3{"Conflito entre papéis?"}
+P3 -->|Sim| P4["Solicitar Prioridade ao Usuário"]
+P4 --> P5["Gravar Preferência"]
+P5 --> BD[(PREFERENCIA_AGENDA)]
+P3 -->|Não| P6["Mostrar Agenda Consolidada"]
+P6 --> BD
+```
+
+**Entrada:** Perfil logado, múltiplas permissões atribuídas  
+**Saída:** Preferência registrada ou agenda resolvida dinamicamente  

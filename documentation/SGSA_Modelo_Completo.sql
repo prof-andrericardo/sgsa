@@ -1,35 +1,14 @@
-# 🗃️ SGSA – Modelo de Dados Físico (DDL Base)
 
-**Versão:** 1.0 | **Atualizado em:** 21/05/2025
-
-Este documento apresenta o script SQL inicial para a criação das estruturas de banco de dados do SGSA (Sistema de Gerenciamento de Sala de Aula), com base nas regras de negócio (RN01–RN46) e casos de uso consolidados até a versão 6.2.
-
-------
-
-## 🎯 Considerações Iniciais
-
-- Banco de dados compatível com **MySQL 8+**
-- Conjunto de caracteres: `utf8mb4`
-- Collation: `utf8mb4_unicode_ci`
-- Engine: `InnoDB`
-
-------
-
-## 🏗️ Script de Criação do Banco `sgsa`
-
-```sql
+-- 🧱 Parte 1: Estrutura Inicial do Banco de Dados
 CREATE DATABASE IF NOT EXISTS sgsa
 DEFAULT CHARACTER SET utf8mb4
 COLLATE utf8mb4_unicode_ci;
 
 USE sgsa;
-```
 
-------
 
-## 👤 Tabela `usuario`
 
-```sql
+-- 👤 Parte 2: Usuários e Controle de Acesso
 CREATE TABLE usuario (
   id INT PRIMARY KEY AUTO_INCREMENT,
   nome VARCHAR(100) NOT NULL,
@@ -43,14 +22,7 @@ CREATE TABLE usuario (
   ultimo_login DATETIME,
   criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
--- RN01, RN02, RN21, RN22, RN45
-```
 
-------
-
-## 🔐 Tabela `usuario_papel`
-
-```sql
 CREATE TABLE usuario_papel (
   id INT PRIMARY KEY AUTO_INCREMENT,
   usuario_id INT NOT NULL,
@@ -59,14 +31,19 @@ CREATE TABLE usuario_papel (
   atribuido_em DATETIME DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (usuario_id) REFERENCES usuario(id) ON DELETE CASCADE
 );
--- RN21
-```
 
-------
+CREATE TABLE log_acesso (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  usuario_id INT,
+  data_hora DATETIME,
+  ip VARCHAR(50),
+  user_agent TEXT,
+  FOREIGN KEY (usuario_id) REFERENCES usuario(id)
+);
 
-## 📚 Tabelas de Estrutura Escolar
 
-```sql
+
+-- 🏫 Parte 3: Estrutura Acadêmica
 CREATE TABLE ciclo (
   id INT PRIMARY KEY AUTO_INCREMENT,
   nome VARCHAR(50) NOT NULL
@@ -95,14 +72,10 @@ CREATE TABLE turma (
   FOREIGN KEY (ano_letivo_id) REFERENCES ano_letivo(id),
   FOREIGN KEY (serie_id) REFERENCES serie(id)
 );
--- RN04, RN05, RN28, RN40
-```
 
-------
 
-## 📖 Tabela `aula`
 
-```sql
+-- 📚 Parte 4: Aula, Chamada e Tarefa
 CREATE TABLE aula (
   id INT PRIMARY KEY AUTO_INCREMENT,
   data DATE NOT NULL,
@@ -117,14 +90,7 @@ CREATE TABLE aula (
   FOREIGN KEY (turma_id) REFERENCES turma(id),
   FOREIGN KEY (professor_id) REFERENCES usuario(id)
 );
--- RN06, RN07, RN08, RN23, RN34
-```
 
-------
-
-## ✅ Tabelas de Frequência e Tarefas
-
-```sql
 CREATE TABLE chamada (
   id INT PRIMARY KEY AUTO_INCREMENT,
   aluno_id INT NOT NULL,
@@ -134,7 +100,6 @@ CREATE TABLE chamada (
   FOREIGN KEY (aluno_id) REFERENCES usuario(id),
   FOREIGN KEY (aula_id) REFERENCES aula(id)
 );
--- RN09, RN10, RN24
 
 CREATE TABLE tarefa (
   id INT PRIMARY KEY AUTO_INCREMENT,
@@ -151,14 +116,10 @@ CREATE TABLE tarefa (
   FOREIGN KEY (turma_id) REFERENCES turma(id),
   FOREIGN KEY (aluno_id) REFERENCES usuario(id)
 );
--- RN11, RN12, RN13, RN25, RN35, RN36
-```
 
-------
 
-## ⚠️ Tabela `ocorrencia`
 
-```sql
+-- 🚨 Parte 5: Ocorrências
 CREATE TABLE ocorrencia (
   id INT PRIMARY KEY AUTO_INCREMENT,
   tipo ENUM('Acadêmica','Comportamental','Saúde') NOT NULL,
@@ -174,14 +135,10 @@ CREATE TABLE ocorrencia (
   FOREIGN KEY (turma_id) REFERENCES turma(id),
   FOREIGN KEY (aula_id) REFERENCES aula(id)
 );
--- RN14–RN20, RN26, RN27, RN37
-```
 
-------
 
-## 📅 Tabelas `grade_horaria` e `intervalo_escolar`
 
-```sql
+-- ⏰ Parte 6: Horários e Intervalos
 CREATE TABLE grade_horaria (
   id INT PRIMARY KEY AUTO_INCREMENT,
   turno ENUM('Matutino','Vespertino','Noturno'),
@@ -199,35 +156,10 @@ CREATE TABLE intervalo_escolar (
   hora_fim TIME,
   observacao TEXT
 );
--- RN29, RN30, RN38, RN46
-```
 
-------
 
-## 🛡️ Tabelas de Logs e Acesso
 
-```sql
-CREATE TABLE log_acesso (
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  usuario_id INT,
-  data_hora DATETIME,
-  ip VARCHAR(50),
-  user_agent TEXT,
-  FOREIGN KEY (usuario_id) REFERENCES usuario(id)
-);
--- RN22, RN32, RN44
-```
-
-------
-
-## ✅ Considerações Finais
-
-- Todas as `FKs` utilizam `ON DELETE CASCADE` onde apropriado.
-- RNs referenciadas como comentários para facilitar rastreabilidade.
-- Script pronto para execução incremental ou adaptação via MySQL Workbench ou CLI.
-
-## 🧠 Tabela `preferencia_agenda`
-```sql
+-- 🧠 Parte 7: Preferência de Agenda
 CREATE TABLE preferencia_agenda (
   id INT PRIMARY KEY AUTO_INCREMENT,
   usuario_id INT NOT NULL,
@@ -235,5 +167,5 @@ CREATE TABLE preferencia_agenda (
   data_definicao DATETIME DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (usuario_id) REFERENCES usuario(id)
 );
--- RN46
-```
+
+

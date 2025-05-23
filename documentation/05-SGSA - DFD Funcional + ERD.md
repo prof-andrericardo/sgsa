@@ -40,11 +40,18 @@ subgraph SGSA
   A6["6. Controle de Acesso e Perfis"]
   A7["7. Agenda e Grade Horária"]
   A8["8. Logs e Auditoria"]
+  A9["9. Gerenciamento de Perfil e Conflitos de Agenda"]
 end
 
-subgraph BASE DE DADOS
+subgraph BASE_DE_DADOS
   BD[(SGSA - MySQL)]
 end
+
+%% Conexões com A9
+Administrador --> A9
+Professor --> A9
+Coordenador --> A9
+A9 --> BD
 
 %% Conexões com usuários
 Professor --> A1
@@ -76,6 +83,7 @@ A5 --> BD
 A6 --> BD
 A7 --> BD
 A8 --> BD
+
 ```
 
 ------
@@ -306,3 +314,16 @@ erDiagram
 - 📦 8 módulos principais.
 - 🧑‍💻 Fluxo de interação com os quatro perfis: Professor, Coordenação, Secretaria e Administrador.
 - 🔄 Integração direta com a base de dados SGSA (MySQL).
+
+
+### 🧠 Tabela `preferencia_agenda`
+```sql
+CREATE TABLE preferencia_agenda (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  usuario_id INT NOT NULL,
+  prioridade ENUM('Professor','Coordenador','Secretaria','Administrador') NOT NULL,
+  data_definicao DATETIME DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (usuario_id) REFERENCES usuario(id)
+);
+-- RN46
+```
