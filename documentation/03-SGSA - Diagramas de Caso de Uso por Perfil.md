@@ -17,9 +17,9 @@ flowchart TB
         A4["Realizar Chamada"]
         A5["Justificar Ausência de Aluno"]
         A6["Gerenciar Tarefas e Avaliações"]
-        A7["Avaliar Tarefa"]
-        A8["Registrar Ocorrência"]
+                A8["Registrar Ocorrência"]
         A9["Visualizar Agenda"]
+        A10["Alternar Perfis de Acesso (RN45)"]
     end
 
     Professor --> A1
@@ -28,10 +28,8 @@ flowchart TB
     Professor --> A4
     Professor --> A5
     Professor --> A6
-    Professor --> A10["Alternar Perfis de Acesso (RN45)"]
-    Professor --> A10["Alternar Perfis (RN45)"]
-    Professor --> A7
-    Professor --> A8
+        Professor --> A10["Alternar Perfis (RN45)"]
+        Professor --> A8
     Professor --> A9
     Professor --> A10["Alternar Perfis de Acesso (RN45)"]
 ```
@@ -53,6 +51,7 @@ flowchart TB
         B6["Gerenciar Grade Horária"]
         B7["Gerenciar Turnos e Intervalos"]
         B8["Visualizar Agenda Consolidada"]
+        B9["Gerenciar Conflitos de Agenda (RN46)"]
     end
 
     Coordenador --> B1
@@ -63,6 +62,7 @@ flowchart TB
     Coordenador --> B6
     Coordenador --> B7
     Coordenador --> B8
+    Coordenador --> B9
 ```
 
 ------
@@ -110,6 +110,9 @@ flowchart TB
         D7["Auditar Logs do Sistema"]
         D8["Configurar Parâmetros do Sistema"]
         D9["Ativar 2FA Global"]
+        D10["Gerenciar Estrutura Institucional (RN40)"]
+        D11["Gerenciar Conflitos de Agenda (RN46)"]
+        D12["Trocar de Perfil em Tempo Real (RN45)"]
     end
 
     Administrador --> D1
@@ -121,4 +124,7 @@ flowchart TB
     Administrador --> D7
     Administrador --> D8
     Administrador --> D9
+    Administrador --> D10
+    Administrador --> D11
+    Administrador --> D12
 ```

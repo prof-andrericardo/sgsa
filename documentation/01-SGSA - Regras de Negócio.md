@@ -1,14 +1,12 @@
-# 📘 Documento Unificado de Regras de Negócio – SGSA (v5.2)
+# 📘 Documento Unificado de Regras de Negócio – SGSA 
 
 **Sistema:** SGSA – Sistema de Gerenciamento de Sala de Aula  
-**Versão:** 5.2 (Unificação técnica + aprofundamento analítico)  
-**Atualizado em:** 21/05/2025  
+**Versão:** 6.4 (Unificação técnica + aprofundamento analítico)  
+**Atualizado em:** 23/05/2025  
 
 ---
 
 ## 🎯 Visão Geral
-
-Este documento integra as versões `chat_v5.1` (formal e consolidada) e `deep_v5.1` (analítica e detalhada), consolidando:
 
 - Regras de negócio atualizadas e priorizadas.
 - Complementos analíticos (novas regras e fluxos).
@@ -18,6 +16,7 @@ Este documento integra as versões `chat_v5.1` (formal e consolidada) e `deep_v5
 As regras estão organizadas por módulo funcional e estão preparadas para suporte ao desenvolvimento técnico, testes e auditoria funcional.
 
 ---
+
 ## 🔐 1. Controle de Acesso e Perfis
 
 | Código | Regra                              | Descrição                                                    |
@@ -65,7 +64,7 @@ As regras estão organizadas por módulo funcional e estão preparadas para supo
 | ------ | ------------------- | ------------------------------------------------------------ |
 | RN09   | Registro individual | Frequência é registrada por aluno, por aula.                 |
 | RN10   | Consolidação diária | O sistema gera relatórios de frequência ao final de cada dia. |
-| RN19   | Histórico de faltas | Consolidado por bimestre, série, aluno.                      |
+| RN19   | Histórico de faltas | Consolidado por mensal, bimestre, trimestre, semestre, anual, série, aluno, com opção de visualização individual e por agrupamento institucional. |
 | RN24   | Registro ampliado   | Marcação de presença suporta os estados: `presente`, `ausente`, `atrasado`, `saiu cedo`, `parcial`. |
 
 ------
@@ -90,7 +89,7 @@ As regras estão organizadas por módulo funcional e estão preparadas para supo
 | RN14   | Classificação             | Tipos de ocorrência: Acadêmica, Comportamental, Saúde.       |
 | RN15   | Registro detalhado        | Requer tipo, descrição, justificativa, data.                 |
 | RN16   | Notificação               | Ocorrências graves geram alerta automático para a coordenação. |
-| RN20   | Relatório de ocorrências  | Relatórios periódicos (mensal, bimestral).                   |
+| RN20   | Relatório de ocorrências  | Relatórios periódicos (mensal, bimestre, trimestre, semestre, anual). |
 | RN26   | Nível de sigilo           | Ocorrências têm níveis de visibilidade: baixo, médio, alto.  |
 | RN27   | Ocorrência fora da aula   | Podem ser registradas mesmo sem vínculo com uma aula. Deve haver campo "vinculada à aula?" para controle. |
 | RN37   | Ocorrência por disciplina | Permite vincular a ocorrência a uma disciplina específica, sendo obrigatório quando houver relação com conteúdo didático. |
@@ -127,10 +126,10 @@ Estas regras são a base para validação técnica e funcional nas etapas de imp
 
 | RN44   | Auditoria de alterações            | Todas as ações críticas do sistema devem ser registradas com data, usuário e contexto. |
 
-| Código | Regra                              | Descrição                                                                 |
-|--------|-------------------------------------|---------------------------------------------------------------------------|
-| RN45   | Troca de perfil em tempo real       | Usuários com múltiplos papéis podem alternar entre eles sem novo login.  |
-| RN46   | Validação de conflito de perfis     | O sistema deve impedir ou alertar sobre combinações inválidas (ex: professor-aluno). |
+| Código | Regra                           | Descrição                                                    |
+| ------ | ------------------------------- | ------------------------------------------------------------ |
+| RN45   | Troca de perfil em tempo real   | Usuários com múltiplos papéis podem alternar entre eles sem novo login. |
+| RN46   | Validação de conflito de perfis | O sistema deve impedir ou alertar sobre combinações inválidas (ex: professor-aluno). |
 
 ---
 
@@ -146,6 +145,7 @@ Estas regras são a base para validação técnica e funcional nas etapas de imp
 ## 📎 Apêndice – Modelos e Diagramas
 
 ### 🔄 Fluxo: Registro de Aula com Cancelamento
+
 ```mermaid
 flowchart TD
     A[Definir Tipo] --> B{Normal?}
@@ -155,6 +155,7 @@ flowchart TD
 ```
 
 ### 📚 Modelo de Tarefa Independente
+
 ```mermaid
 erDiagram
     TAREFA {
@@ -166,6 +167,7 @@ erDiagram
 ```
 
 ### 📝 Template Markdown de Ocorrência
+
 ```markdown
 ## [TIPO] - [DISCIPLINA]  
 **Data:** [DD/MM/AAAA HH:MM]  
@@ -173,3 +175,16 @@ erDiagram
 **Evidências Obrigatórias:** (Para níveis Médio/Alta)
 ```
 
+
+
+### ⚖️ Fluxo – Resolução de Conflito de Agendas (RN46)
+
+```mermaid
+flowchart TD
+    U1[Usuário com múltiplos papéis] --> C1[Consulta Agenda Consolidada]
+    C1 --> C2{Conflito detectado?}
+    C2 -->|Sim| C3[Solicita Prioridade de Exibição]
+    C3 --> BD[(Gravar Preferência)]
+    C2 -->|Não| C4[Exibe Agenda Unificada]
+    C4 --> BD
+```

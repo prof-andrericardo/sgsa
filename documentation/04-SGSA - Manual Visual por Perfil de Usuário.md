@@ -23,7 +23,7 @@ Este manual apresenta de forma clara e objetiva as funcionalidades e regras de n
 - **RN10**: Consolidação diária da frequência
 - **RN11–RN13**: Atribuição, estrutura e notificação de tarefas
 - **RN14–RN16**: Registro e notificação de ocorrências
-- **RN19**: Histórico de faltas
+- **RN19**: Histórico de faltas com visualização individual e por agrupamento institucional
 - **RN23**: Aula não ministrada
 - **RN24**: Registro ampliado (atraso, saída antecipada)
 - **RN25**: Tarefas fora de aula
@@ -59,8 +59,8 @@ Este manual apresenta de forma clara e objetiva as funcionalidades e regras de n
 - **RN01**: Acesso hierárquico
 - **RN17**: Controle de dados sensíveis
 - **RN18**: Alerta de aniversários
-- **RN19**: Histórico de faltas
-- **RN20**: Relatórios mensais de ocorrências
+- **RN19**: Histórico de faltas com visualização individual e por agrupamento institucional
+- **RN20**: Relatórios periódicos (mensal, bimestre, trimestre, semestre, anual)
 - **RN22**: Logs de acesso
 - **RN26**: Sigilo de ocorrências
 - **RN27**: Ocorrência fora de aula
@@ -144,7 +144,7 @@ Este manual apresenta de forma clara e objetiva as funcionalidades e regras de n
 - **RN40**: Manutenção da estrutura institucional
 - **RN41**: Acesso administrativo completo
 - **RN42**: Configurações globais do sistema
-- **RN44**: Auditoria de alterações
+- **RN43**: Auditoria de alterações
 - **RN45**: Troca de perfil em tempo real
 - **RN46**: Conflito de agendas por múltiplos perfis
 

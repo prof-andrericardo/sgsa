@@ -1,5 +1,6 @@
 # 📘 SGSA – Documento Unificado de Casos de Uso e Regras de Negócio  
-**Versão:** 6.1 | **Atualizado em:** 21/05/2025  
+
+**Versão:** 6.2 | **Atualizado em:** 23/05/2025  
 
 ---
 
@@ -14,8 +15,6 @@
 
 ## 🌐 Visão Geral
 
-Este documento unifica as versões `chat_v5.3` (pragmática e funcional) e `deep_v6.0` (analítica e ampliada), consolidando:
-
 - **Casos de uso validados com base nas RNs v6.0**
 - **Diagramas de fluxo, ciclo de vida e templates padronizados**
 - **Campos obrigatórios e validações técnicas e pedagógicas**
@@ -24,15 +23,17 @@ Este documento unifica as versões `chat_v5.3` (pragmática e funcional) e `deep
 ---
 
 ## 📂 Casos de Uso
+
 ---
 
-## 10. Gerenciar Estrutura Institucional
+## 1. Gerenciar Estrutura Institucional
 
 **🎯 Ator Principal:** Administrador  
 **📝 Descrição:** Permite criar e editar ciclos, séries e turmas vinculadas ao ano letivo, e definir a estrutura básica da instituição.
 
 **✅ Pré-condições:** Acesso com permissão de administrador.  
 **🔁 Fluxo Principal:**
+
 1. Cria ou edita ciclos (ex: Fundamental I, Médio).
 2. Define séries associadas aos ciclos.
 3. Cria turmas vinculadas ao ano letivo e série.
@@ -43,7 +44,7 @@ Este documento unifica as versões `chat_v5.3` (pragmática e funcional) e `deep
 **🔗 Regras Relacionadas:** RN04, RN05, RN28, RN40
 
 
-## 1. Registrar Aula
+## 2. Registrar Aula
 
 **Ator:** Professor
  **Regras Relacionadas:** RN06, RN07, RN08, RN23, RN34, RN32
@@ -83,7 +84,7 @@ flowchart TB
 
 ---
 
-## 2. Realizar Chamada
+## 3. Realizar Chamada
 
 **Ator:** Professor
  **Regras Relacionadas:** RN09, RN10, RN19, RN24, RN08, RN32
@@ -125,7 +126,7 @@ flowchart LR
 
 ---
 
-## 3. Atribuir e Avaliar Tarefa
+## 4. Atribuir e Avaliar Tarefa
 
 **Ator:** Professor
  **Regras Relacionadas:** RN11, RN12, RN13, RN25, RN35, RN36, RN32
@@ -175,7 +176,7 @@ journey
 
 ---
 
-## 4. Registrar Ocorrência
+## 5. Registrar Ocorrência
 
 **Ator:** Professor, Coordenação, Secretaria
  **Regras Relacionadas:** RN14 a RN16, RN20, RN26, RN27, RN37, RN32
@@ -211,7 +212,7 @@ journey
 
 ---
 
-## 5. Gerenciar Usuários e Perfis
+## 6. Gerenciar Usuários e Perfis
 
 **Ator:** Administrador, Coordenação
  **Regras Relacionadas:** RN01, RN02, RN21, RN39, RN41, RN42, RN32
@@ -243,7 +244,7 @@ flowchart TD
 
 ---
 
-## 6. Gerenciar Grade Horária
+## 7. Gerenciar Grade Horária
 
 **Ator:** Coordenação, Administrador
  **Regras Relacionadas:** RN28, RN29, RN30, RN40, RN32
@@ -272,7 +273,7 @@ flowchart TD
 
 ---
 
-## 7. Consultar Agenda
+## 8. Consultar Agenda
 
 **Ator:** Todos os Perfis
  **Regras Relacionadas:** RN38, RN32
@@ -291,7 +292,7 @@ flowchart TD
 
 ---
 
-## 8. Auditoria de Alterações
+## 9. Auditoria de Alterações
 
 **Aplicável a:** Todos os fluxos onde há edição ou exclusão de dados
  **Regras Relacionadas:** RN32
@@ -317,15 +318,18 @@ flowchart LR
 ## 📎 Anexos  
 
 ### Matriz de Rastreabilidade Completa  
+
 [Link para planilha](#)  
 
 ### Códigos de Erro  
+
 | Código | Descrição                |
 | ------ | ------------------------ |
 | 460    | Conflito de perfis       |
 | 461    | Disciplina não informada |
 
 ### Versões para Exportação  
+
 ```mermaid  
 pie  
     title Formatos  
