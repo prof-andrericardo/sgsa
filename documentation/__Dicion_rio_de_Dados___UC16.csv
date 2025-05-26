@@ -1,0 +1,14 @@
+Tabela,Campo,Tipo,Descrição,Restrição
+alunos,id,INT,Identificador único do aluno,PK
+alunos,nome,VARCHAR(100),Nome completo do aluno,
+alunos,matricula,VARCHAR(20),Código de matrícula do aluno,UNIQUE
+turmas,id,INT,Identificador único da turma,PK
+turmas,nome,VARCHAR(50),Nome da turma,
+turmas,ano,YEAR,Ano letivo da turma,
+disciplinas,id,INT,Identificador único da disciplina,PK
+disciplinas,nome,VARCHAR(100),Nome da disciplina,
+chamadas,id,INT,Identificador da chamada,PK
+chamadas,data,DATE,Data da chamada,
+chamadas,presenca,BOOLEAN,Presença ou ausência do aluno,
+chamadas,aluno_id,INT,Referência ao aluno,FK → alunos(id)
+chamadas,turma_id,INT,Referência à turma,FK → turmas(id)
