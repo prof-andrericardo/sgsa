@@ -1,0 +1,130 @@
+@import url(components/header.css);
+@import url(components/main.css);
+@import url(components/footer.css);
+
+html, body, #container-login, #container-recuperacao, #container-pedido, #password-changed{
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Montserrat", sans-serif;
+}
+#container-login figcaption{
+  width: 350px;
+  height: 107px;
+}
+.texto-intruducao{
+  width: 302px;
+}
+form label{
+  margin: 10px 0;
+}
+form input{
+  border: 1px solid #000; 
+  background-color: #eee;
+  padding: 10px;
+  border-radius: 20px;
+  width: 300px;
+  height: 50px;
+}
+
+main figcaption{
+  height: 215px;
+  width: 185px;
+}
+main .text-password{
+  font-size: 19px;
+  width: 206px;
+}
+form span a{
+  opacity: 0.5;
+}
+.button-voltar{
+  color: #333;
+  border: 1px solid #777;
+  padding: 5px 50px;
+  border-radius: 10px;
+}
+#container-recuperacao form .btn-primary,
+#container-pedido .btn-primary{
+  text-align: center;
+  padding-top: 13px;
+}
+.btn-secondary{
+  text-align: center;
+  padding-top: 13px;
+}
+.text-order{
+  font-size: 20px;
+  width: 345px;
+}
+.text-description{
+  width: 311px;
+}
+#timer{
+  font-size: 25px;
+}
+
+.container-banner{
+  height: 246px;
+}
+header{
+  height: 251px;
+  border-bottom: 3px solid #275023;
+}
+
+.container-banner header i{
+  font-size: 2.5rem;
+  color: #fff;
+}
+.container-banner header figcaption img{
+  height: 130px;
+  border: 2px solid #fff;
+  border-radius: 100%;
+}
+.container-banner header a{
+  font-size: 20px;
+  text-decoration: underline;
+}
+.text-high{
+  margin-bottom: 9rem;
+}
+
+figcaption {
+  position: relative;
+  display: inline-block;
+}
+
+.icon-camera {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  transform: translateX(30%) translateY(-10%);
+  border-radius: 50%;
+  background-color: #D9D9D9;
+  padding: 6px;
+}
+
+.container-banner .new-password-icon img{
+  width: 77px;
+}
+.container-banner form label{
+  margin-left: -9rem;
+}
+.container-banner form label:first-child{
+  margin-left: -11rem;
+}
+.container-banner form input{
+  border: none;
+}
+.container-banner form input::placeholder{
+  font-size: 15px;
+}
+.container-banner form a{
+  font-size: 18px;
+  text-decoration: underline;
+}
+.container-banner form .btn-primary{
+  width: 152px;
+  border-radius: 30px;
+  text-align: center;
+  padding-top: 15px;
+}

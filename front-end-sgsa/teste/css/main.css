@@ -1,0 +1,64 @@
+@import url(components/header.css);
+@import url(components/main.css);
+@import url(components/footer.css);
+
+html, body, #container-login, #container-recuperacao, #container-pedido{
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Montserrat", sans-serif;
+}
+#container-login figcaption{
+  width: 350px;
+  height: 107px;
+}
+.texto-intruducao{
+  width: 302px;
+}
+form label{
+  margin: 10px 0;
+}
+form input{
+  border: 1px solid #000; 
+  background-color: #eee;
+  padding: 10px;
+  border-radius: 20px;
+  width: 300px;
+  height: 50px;
+}
+
+main figcaption{
+  height: 215px;
+  width: 185px;
+}
+main .text-password{
+  font-size: 19px;
+  width: 206px;
+}
+form span a{
+  opacity: 0.5;
+}
+.button-voltar{
+  color: #333;
+  border: 1px solid #777;
+  padding: 5px 50px;
+  border-radius: 10px;
+}
+#container-recuperacao form .btn-primary,
+#container-pedido .btn-primary{
+  text-align: center;
+  padding-top: 13px;
+}
+.btn-secondary{
+  text-align: center;
+  padding-top: 13px;
+}
+.text-order{
+  font-size: 20px;
+  width: 345px;
+}
+.text-description{
+  width: 311px;
+}
+#timer{
+  font-size: 25px;
+}

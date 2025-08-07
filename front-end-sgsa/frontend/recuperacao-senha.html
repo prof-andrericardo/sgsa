@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SGSA - Colégio Victorino</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- Link para Icons do FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <!-- Link Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Tela Recuperação de Senha -->
+    <div class="d-flex flex-column justify-content-between" id="container-recuperacao">
+      <div id="header"></div>
+      <div id="main">
+        <main class="d-flex justify-content-center align-items-center flex-column">
+          <!-- Imagem do Banner Victorino -->
+          <figcaption>
+            <img src="assets/images/CV_simbolo-mono-roxo.png" alt="Banner Roxo Colégio Victorino" class="banner-victorino">
+          </figcaption>
+          <!-- Texto de Pergunta -->
+          <p class="text-password text-center">Como você quer recuperar sua senha?</p>
+          <!-- Formulário -->
+          <form class="d-flex justify-content-center flex-column">
+            <span>
+              <!-- Texto para colocar o usuário ou email -->
+              <label for="email-usuario" class="me-3">Usuário ou email </label>
+              <a href="#">
+                <i class="fa-regular fa-circle-question"></i>
+              </a>
+            </span>
+            <!-- Campo para colocar o usuário ou email -->
+            <input id="email-usuario" type="email" class="mb-5">
+
+            <!-- Botão para enviar email para nova senha -->
+            <a href="pedido-senha.html" class="btn-primary ms-3">
+              Enviar
+            </a>
+          </form>
+          <!-- Botão para voltar para a tela de login -->
+          <a href="index.html" class="button-voltar mt-4">
+            <i class="fa-solid fa-caret-left me-2"></i>
+            Voltar
+          </a>
+        </main>
+      </div>
+      <div id="footer"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script type="module" src="js/funcoesDOM.js"></script>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

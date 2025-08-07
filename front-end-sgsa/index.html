@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SGSA - Colégio Victorino</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- Link para Icons do FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <!-- Link Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Tela de Login Principal -->
+    <div class="d-flex flex-column justify-content-between" id="container-login">
+      <div id="header"></div>
+      <div id="main">
+        <main class="d-flex align-items-center flex-column">
+          <!-- Imagem do Banner Victorino -->
+          <figcaption>
+            <img src="assets/images/CV_logo-horizontal-mono-roxo.png" alt="Banner Roxo Colégio Victorino" class="banner-victorino">
+          </figcaption>
+          <!-- Texto Apresentação/Saudação -->
+          <p class="texto-intruducao text-center">Bem-vindo ao Sistema de Gestão Acadêmica do Colégio Victorino!</p>
+          <!-- Formulário para Logar -->
+          <form class="d-flex justify-content-center flex-column">
+            <label for="login" class="fw-semibold">Login</label>
+            <input id="login" type="email" placeholder="Digite o email de usuário">
+
+            <label for="senha" class="fw-semibold">Senha</label>
+            <input id="senha" type="password" placeholder="Digite a senha de usuário">
+            <button class="btn btn-primary ms-3 mt-5">Entrar</button>
+          </form>
+
+          <!-- Link de Esqueci minha senha -->
+          <button id="esqueci-senha" class="text-primary mt-2">
+            <a href="recuperacao-senha.html">Esqueci minha senha</a>
+          </button>
+        </main>
+      </div>
+      <div id="footer"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

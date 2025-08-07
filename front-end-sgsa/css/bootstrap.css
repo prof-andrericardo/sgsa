@@ -1,0 +1,24 @@
+/* Alterando cores */
+:root{
+    --bs-primary-rgb: 66, 9, 80;
+    --bs-secondary-rgb: 39, 80, 35;
+}
+/* Modificando botão primario */
+.btn-primary {
+    background-color: rgb(66, 9, 80);
+    width: 250px;
+    height: 60px;
+    font-size: 24px;
+    border: none;
+    border-radius: 20px;
+    color: #FFF;
+}
+.btn-secondary{
+    background-color: #A4A4A4;
+    width: 250px;
+    height: 60px;
+    font-size: 24px;
+    border: none;
+    border-radius: 20px;
+    color: #FFF;
+}
