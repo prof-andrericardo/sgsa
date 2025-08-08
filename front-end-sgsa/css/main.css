@@ -106,11 +106,9 @@ figcaption {
 .container-banner .new-password-icon img{
   width: 77px;
 }
-.container-banner form label{
-  margin-left: -9rem;
-}
-.container-banner form label:first-child{
-  margin-left: -11rem;
+.container-banner form{
+  width: 310px;
+  margin: 0 auto;
 }
 .container-banner form input{
   border: none;
@@ -127,4 +125,26 @@ figcaption {
   border-radius: 30px;
   text-align: center;
   padding-top: 15px;
+}
+
+.photo-user{
+  margin-right: 5.75rem;
+}
+
+#password-changed{
+  font-family: "Roboto", sans-serif;
+}
+#password-changed img{
+  width: 150px;
+}
+#password-changed .text-sucess{
+  font-size: 32px;
+}
+#password-changed .text-description{
+  font-size: 24px;
+  width: 319px;
+}
+#password-changed .btn-primary{
+  text-align: center;
+  padding-top: 13px;
 }
